@@ -43,8 +43,8 @@ def getLiveChat(video_id):
                 chat_data = json.load(f)
 
         for c in chatdata.items:
-            print(f"{c.datetime} {c.author.name} {c.message} {c.amountString}")
-            temp_data[f'chat{chat_cnt}'] = {'datetime': c.datetime, 'author.name': c.author.name, 'message': c.message, 'amountString': c.amountString}
+            print(f"{c.timestamp} {c.author.name} {c.message} {c.amountString}")
+            temp_data[f'chat{chat_cnt}'] = {'timestamp': c.timestamp, 'author.name': c.author.name, 'message': c.message, 'amountString': c.amountString}
             chat_cnt += 1
 
         chat_data.update(temp_data)
@@ -61,5 +61,5 @@ def getLiveChat(video_id):
         time.sleep(5)
 
 if __name__ == '__main__':
-    video_id = "SeWzXV0fYOM"
+    video_id = "nBZTIJHZZm0"
     getLiveChat(video_id)
