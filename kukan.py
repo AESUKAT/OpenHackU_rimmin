@@ -14,6 +14,8 @@ flag = True
 #デバッグ用 総秒数
 #print(jsn["chat5641"]["datetime"]//1000 - jsn["chat1"]["datetime"]//1000)
 
+#111
+
 while flag:
     for k in jsn.keys():
         flag = False
