@@ -1,6 +1,6 @@
 import json
 
-with open('chat_file_0000.json') as f:
+with open('./chat_data/nBZTIJHZZm0/chat_file_0000.json') as f:
     jsn = json.load(f)
 #5分=300秒
 start_time = jsn["chat1"]["datetime"] // 1000
