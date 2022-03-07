@@ -61,5 +61,5 @@ def getLiveChat(video_id):
         time.sleep(5)
 
 if __name__ == '__main__':
-    video_id = input()
+    video_id = input('plz input video_id:')
     getLiveChat(video_id)
