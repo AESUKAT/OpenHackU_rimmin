@@ -75,11 +75,9 @@ for i in range(len(all_coments)):
     macth_count = 0
 
 ranking = sorted(macth_counts.items(), key=lambda x:x[1])
-print([ranking[-1][0], ranking[-1][0] + section_time],[ranking[-2][0], ranking[-2][0] + section_time],[ranking[-3][0], ranking[-3][0] + section_time])
 ranking_list = [[ranking[-1][0], ranking[-1][0] + section_time],[ranking[-2][0], ranking[-2][0] + section_time],[ranking[-3][0], ranking[-3][0] + section_time]]
 
 time_weight = np.array([0] * total_time)
 for l in ranking_list:
     time_weight[l[0]:l[1]+1] += 1
 np.set_printoptions(threshold=60000)
-print(time_weight)
