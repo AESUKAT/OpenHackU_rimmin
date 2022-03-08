@@ -61,15 +61,8 @@ def calculation_of_sections_function(jsn, total_time, section_time):
     ranking = sorted(macth_counts.items(), key=lambda x:x[1])
     # ranking_list -> 面白いと予想した区間
     ranking_list = [[ranking[-1][0], ranking[-1][0] + section_time],[ranking[-2][0], ranking[-2][0] + section_time],[ranking[-3][0], ranking[-3][0] + section_time]]
-
+    print(ranking_list)
     return ranking_list
-
-def spread_projected_sections_function(total_time, ranking_list):
-    time_weight = np.array([0] * total_time)
-    for l in ranking_list:
-        time_weight[l[0]:l[1]+1] += 1
-    np.set_printoptions(threshold=60000)
-    print(time_weight)
 
 def main():
     path_string = './chat_data/nBZTIJHZZm0/chat_file_0000.json'
@@ -77,7 +70,6 @@ def main():
     jsn = load_json_function(path_string)
     total_time = total_time_calculation_function(jsn)
     ranking_list = calculation_of_sections_function(jsn, total_time, section_time)
-    projected_Sections = spread_projected_sections_function(total_time, ranking_list)
 
 if __name__=="__main__":
     main()
