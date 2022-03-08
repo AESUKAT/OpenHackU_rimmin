@@ -18,7 +18,6 @@ def import_json_info(video_id):
 
 def time_to_seconds(input_time):
     time = list(map(int, input_time.split(':')))
-    print(time)
     hour = 0
     if len(time) > 2:
         hour = time.pop(0)
