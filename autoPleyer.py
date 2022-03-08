@@ -1,34 +1,28 @@
 import time
 from selenium import webdriver
-import csv
 
-target_url = "https://www.youtube.com/watch?v=nBZTIJHZZm0"
+def call_selenium(target_url, best_moments):
+    profilefolder = '--user-data-dir=' + r"C:\Users\admin\AppData\Local\Google\Chrome\User Data"
+    options = webdriver.ChromeOptions()
+    options.add_argument(profilefolder)
 
-best_moments = []
-with open('moment.csv') as f:
-    reader = csv.reader(f)
-    for row in reader:
-        rowlist = [row]
-        best_moments += rowlist
-profilefolder = '--user-data-dir=' + r"C:\Users\admin\AppData\Local\Google\Chrome\User Data"
+    driver = webdriver.Chrome(
+        executable_path = r"./chromedriver.exe",
+        options = options
+    )
 
-options = webdriver.ChromeOptions()
-options.add_argument(profilefolder)
+    for i in range(len(best_moments)):
+        target_section_start = target_url + "&t=" + str(best_moments[i][0]) + "s"
+        driver.get(target_section_start)
+        print(best_moments[i][1] - best_moments[i][0])
+        time.sleep(best_moments[i][1] - best_moments[i][0])
 
-driver = webdriver.Chrome(
-    executable_path = r"./chromedriver.exe",
-    options = options
-)
+    driver.quit()
 
-for i in range(len(best_moments)):
-    target_section_start = target_url + "&t=" + best_moments[i][0] + "s"
-    driver.get(target_section_start)
+def main():
+    target_url = "https://www.youtube.com/watch?v=nBZTIJHZZm0"
+    best_moments = [[305,335], [1478,1508], [373,403]]
+    call_selenium(target_url, best_moments)
 
-    '''
-    print(best_moments[i][0], best_moments[i][1])
-    print(target_section_start)
-    '''
-
-    time.sleep(int(best_moments[i][1]) - int(best_moments[i][0]))
-
-driver.quit()
+if __name__=="__main__":
+    main()
