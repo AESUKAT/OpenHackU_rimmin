@@ -2,6 +2,7 @@ import pytchat
 import time
 import json
 import os
+import re
 
 chat_max_cnt = 32760
 
@@ -9,9 +10,17 @@ def makeNewFile(file_path):
     with open(file_path, 'w') as f:
         pass
 
+def urlToVideoid(url):
+    url += "&"
+    pattern = "v=(.+)&"
+    regex = re.compile(pattern)
+    video_id = regex.search(url).groups()[0]
+    
+    print(video_id)
+    return video_id
+
 def getLiveChat(video_id):
     livechat = pytchat.create(video_id=video_id)
-
     # 一つ一つのコメントに対してユニークな値をあたえる必要があるから
     # コメントを約2^15個ごとにファイルを分けている。
     # chat_cntはファイル内のコメントのindex。
@@ -57,9 +66,8 @@ def getLiveChat(video_id):
             file_cnt += 1
             file_path = f'chat_data/{video_id}/chat_file_{file_cnt:0>4}.json'
             makeNewFile(file_path)
-
         time.sleep(5)
 
 if __name__ == '__main__':
-    video_id = input('plz input video_id:')
-    getLiveChat(video_id)
+    url = input('plz input url:')
+    getLiveChat(urlToVideoid(url))
