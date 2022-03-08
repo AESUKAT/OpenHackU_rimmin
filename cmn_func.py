@@ -1,6 +1,7 @@
 import json
 import numpy as np
 
+START_TIME = 0
 LAST_CHAT_TIME = 0
 
 def import_json_info(video_id):
@@ -34,6 +35,10 @@ def time_to_number_line(time_info_list):
         temp_number_line = np.array([0] * movie_seconds)
         for time in time_info:
             for start_time, finish_time in time:
+                if start_time < START_TIME:
+                    start_time = START_TIME
+                if finish_time > LAST_CHAT_TIME:
+                    finish_time = LAST_CHAT_TIME
                 temp_number_line[start_time:finish_time+1] = 1
         number_line += temp_number_line
     
