@@ -45,7 +45,7 @@ def get_inst_higher(chat_data):
         else:
             temp_key_list.append(key)
 
-    print(funny_point_list)
+    return funny_point_list
 
 if __name__ == '__main__':
     # video_id = input('plz input video_id:')
@@ -53,4 +53,8 @@ if __name__ == '__main__':
 
     chat_data = cmn_func.import_json_info(video_id)
 
-    get_inst_higher(chat_data)
+    funny_point_list = [get_inst_higher(chat_data)]
+
+    number_line = cmn_func.time_to_number_line(funny_point_list)
+
+    print(number_line)

@@ -13,7 +13,7 @@ def import_json_info(video_id):
 
     chat_data = {k: v for k, v in cgat_data.items() if v["elapsedTime"][0] != "-"}
 
-    LAST_CHAT_TIME = chat_data[list(chat_data.keys())[-1]]['elapsedTime']
+    LAST_CHAT_TIME = time_to_seconds(chat_data[list(chat_data.keys())[-1]]['elapsedTime'])
     
     return chat_data
 
@@ -28,18 +28,17 @@ def time_to_seconds(input_time):
     return hour*60*60 + minute*60 + second
 
 def time_to_number_line(time_info_list):
-    movie_seconds = time_to_seconds(LAST_CHAT_TIME)
-    number_line = np.array([0] * movie_seconds)
+    number_line = np.array([0] * LAST_CHAT_TIME)
 
     for time_info in time_info_list:
-        temp_number_line = np.array([0] * movie_seconds)
+        temp_number_line = np.array([0] * LAST_CHAT_TIME)
         for time in time_info:
-            for start_time, finish_time in time:
-                if start_time < START_TIME:
-                    start_time = START_TIME
-                if finish_time > LAST_CHAT_TIME:
-                    finish_time = LAST_CHAT_TIME
-                temp_number_line[start_time:finish_time+1] = 1
+            print(time)
+            if time[0] < START_TIME:
+                time[0] = START_TIME
+            if time[1] > LAST_CHAT_TIME:
+                time[1] = LAST_CHAT_TIME
+            temp_number_line[time[0]:time[1]+1] = 1
         number_line += temp_number_line
     
     return number_line
