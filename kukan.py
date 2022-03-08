@@ -11,7 +11,7 @@ last_key = list(jsn.keys())[-1]
 
 last_key_time = jsn[last_key]["elapsedTime"]
 total_time = 0
-weight = [60000, 6000, 600, 60, null, 10, 1]
+weight = [60000, 6000, null, 600, 60, null, 10, 1]
 
 #動画総時間の計算
 for i in range(-1, (len(last_key_time) + 1) * -1, -1):
