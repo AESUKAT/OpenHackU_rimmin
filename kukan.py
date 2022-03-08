@@ -47,23 +47,6 @@ for i in range(total_time):
     coments = []
     jsn = {k: v for k, v in jsn.items() if v["timestamp"] // 1000 != findtime}
 
-'''
-while flag:
-    for k in jsn.keys():
-        flag = False
-        timestamp = jsn[k]["timestamp"] // 1000
-        coment = jsn[k]["message"]
-        coments.append(coment)
-        print(timestamp - section_start, section_time)
-        if timestamp - section_start >= section_time:
-            all_coments.append(coments)
-            jsn = {k: v for k, v in jsn.items() if v["timestamp"] // 1000 > section_start}
-            coments = []
-            section_start += diff
-            flag = True
-            break
-'''
-
 macth_count = 0
 macth_counts = {}
 
@@ -81,3 +64,20 @@ time_weight = np.array([0] * total_time)
 for l in ranking_list:
     time_weight[l[0]:l[1]+1] += 1
 np.set_printoptions(threshold=60000)
+
+'''
+while flag:
+    for k in jsn.keys():
+        flag = False
+        timestamp = jsn[k]["timestamp"] // 1000
+        coment = jsn[k]["message"]
+        coments.append(coment)
+        print(timestamp - section_start, section_time)
+        if timestamp - section_start >= section_time:
+            all_coments.append(coments)
+            jsn = {k: v for k, v in jsn.items() if v["timestamp"] // 1000 > section_start}
+            coments = []
+            section_start += diff
+            flag = True
+            break
+'''
