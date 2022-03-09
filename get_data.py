@@ -58,7 +58,7 @@ def get_live_chat(video_id):
             file_path = f'chat_data/{video_id}/chat_file_{file_cnt:0>4}.json'
             make_new_file(file_path)
 
-        time.sleep(5)
+        time.sleep(1)
 
 if __name__ == '__main__':
     video_id = input('plz input video_id:')
