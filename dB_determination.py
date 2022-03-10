@@ -26,6 +26,9 @@ def dB_determination(YouTube_URL):
 def download(Video_URL, mp4_file_path):
     video = YouTube(Video_URL).streams.filter(subtype='mp4').first()
     video.download('./', mp4_file_path)
+
+    del video
+
     print('DL完了')
 
 # mp4ファイルをモノラル音声のwavファイルに変換する
@@ -38,6 +41,8 @@ def mp4_to_wav(mp4_file_path, wav_file_path):
     mono_data = sound if type(sound[0]) is float else stereo_to_mono(sound)
     sf.write(wav_file_path, mono_data, fs)
 
+    del video, audio, sound, fs, mono_data
+
     print('WAV変換完了')
 
 # ステレオ音声をモノラル音声に変える
@@ -45,6 +50,7 @@ def stereo_to_mono(stereo_data):
     mono_data = np.array([float(0)]*len(stereo_data))
     mono_data += np.mean(stereo_data, axis=1)
     print('mono化完了')
+
     return mono_data
 
 # 音圧を1秒あたりの平均値にまとめる
@@ -69,8 +75,10 @@ def voloume_dB_mean_per_seconds(wav_file_path):
         if volume_dB_mean[i] > -30:
             volume_dB_mean_overstn = np.append(volume_dB_mean_overstn, volume_dB_mean[i])
             new_times = np.append(new_times, volume_dB_mean[i+1])
+
+    del sound, fs, rms, volume_dB, volume_dB_mean, seconds
     
-    print('音圧毎秒平均完了', seconds)
+    print('音圧毎秒平均完了')
     return volume_dB_mean_overstn, new_times
 
 # 音圧の区間あたりの偏差値と高偏差値の時間を出す
@@ -81,6 +89,8 @@ def volume_dB_value_cal(volume_dB_mean_overstn):
 
     deviation = 70
     time_index = np.where(volume_dB_value >= deviation)
+
+    del volume_dB_mean_mean, volume_dB_std, volume_dB_value, deviation
 
     print('うるさい時間検索完了')
     return time_index
@@ -94,6 +104,8 @@ def start_end_timing(new_times, time_index):
         np_end_time = new_times[time_index[i]] + time_wid
     start_time_list = np_start_time.tolist()
     end_time_list = np_end_time.tolist()
+
+    del new_times, time_index
 
     print('再生する時間の探索完了')
     return start_time_list, end_time_list
@@ -125,6 +137,8 @@ def create_chapter_list(start_time_list, end_time_list):
             end_flag = False
             if (end_time - start_time > 5):
                 chapter_list.append([start_time, end_time])
+    
+    del start_time_list, end_time_list, start_flag, end_flag, len_start_end_time_list
     
     print('チャプターリスト作成完了')
     return chapter_list
