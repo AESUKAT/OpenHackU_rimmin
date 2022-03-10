@@ -1,0 +1,177 @@
+{
+    "chat0": {
+        "elapsedTime": "0:24",
+        "timestamp": 1646810622240,
+        "author.name": "\u3086\u304d\u3061",
+        "message": "\u304a\u304a\u304a",
+        "amountString": ""
+    },
+    "chat1": {
+        "elapsedTime": "0:24",
+        "timestamp": 1646810622571,
+        "author.name": "maomao",
+        "message": "\u3088\u308d\u3057\u304f\u304a\u9858\u3044\u3057\u307e\u3059",
+        "amountString": ""
+    },
+    "chat2": {
+        "elapsedTime": "0:25",
+        "timestamp": 1646810623240,
+        "author.name": "neon",
+        "message": "\u521d\u30b3\u30e1\u3067\u3059",
+        "amountString": ""
+    },
+    "chat3": {
+        "elapsedTime": "0:33",
+        "timestamp": 1646810631035,
+        "author.name": "AESUKAT",
+        "message": "\uff77\uff80\u2501(\uff9f\u2200\uff9f)\u2501!",
+        "amountString": ""
+    },
+    "chat4": {
+        "elapsedTime": "0:47",
+        "timestamp": 1646810644712,
+        "author.name": "neon",
+        "message": "\u5bfe\u6226\u3088\u308d\u3057\u304f\u304a\u9858\u3044\u3057\u307e\u3059",
+        "amountString": ""
+    },
+    "chat5": {
+        "elapsedTime": "0:55",
+        "timestamp": 1646810652789,
+        "author.name": "\u3086\u304d\u3061",
+        "message": "\u521d\u898b\u3067\u3059",
+        "amountString": ""
+    },
+    "chat6": {
+        "elapsedTime": "0:55",
+        "timestamp": 1646810653360,
+        "author.name": "maomao",
+        "message": "www",
+        "amountString": ""
+    },
+    "chat7": {
+        "elapsedTime": "0:57",
+        "timestamp": 1646810655599,
+        "author.name": "neon",
+        "message": "\u304a\u304a\u304a\u304a\u304a\u304a\u304a\u304a",
+        "amountString": ""
+    },
+    "chat8": {
+        "elapsedTime": "1:00",
+        "timestamp": 1646810657788,
+        "author.name": "maomao",
+        "message": "\u307e\u305a\u3044w",
+        "amountString": ""
+    },
+    "chat9": {
+        "elapsedTime": "1:04",
+        "timestamp": 1646810662380,
+        "author.name": "neon",
+        "message": "\u305d\u308c\u306f\u8349",
+        "amountString": ""
+    },
+    "chat10": {
+        "elapsedTime": "1:04",
+        "timestamp": 1646810662582,
+        "author.name": "AESUKAT",
+        "message": "wwww",
+        "amountString": ""
+    },
+    "chat11": {
+        "elapsedTime": "1:06",
+        "timestamp": 1646810663719,
+        "author.name": "neon",
+        "message": "ww",
+        "amountString": ""
+    },
+    "chat12": {
+        "elapsedTime": "1:07",
+        "timestamp": 1646810665287,
+        "author.name": "AESUKAT",
+        "message": "\u8349",
+        "amountString": ""
+    },
+    "chat13": {
+        "elapsedTime": "1:08",
+        "timestamp": 1646810665973,
+        "author.name": "neon",
+        "message": "wwwwwwwwwww",
+        "amountString": ""
+    },
+    "chat14": {
+        "elapsedTime": "1:08",
+        "timestamp": 1646810666139,
+        "author.name": "maomao",
+        "message": "\u3053\u308c\u306f\u8f9b\u3044w",
+        "amountString": ""
+    },
+    "chat15": {
+        "elapsedTime": "1:12",
+        "timestamp": 1646810670160,
+        "author.name": "neon",
+        "message": "\u30de\u30b8\u304b\u3088\u8349",
+        "amountString": ""
+    },
+    "chat16": {
+        "elapsedTime": "1:15",
+        "timestamp": 1646810672750,
+        "author.name": "maomao",
+        "message": "\u30d9\u30af\u5909\u3080\u305a\u3044\u3082\u3093\u306aw",
+        "amountString": ""
+    },
+    "chat17": {
+        "elapsedTime": "1:15",
+        "timestamp": 1646810673492,
+        "author.name": "AESUKAT",
+        "message": "\u3064\u3088w",
+        "amountString": ""
+    },
+    "chat18": {
+        "elapsedTime": "1:21",
+        "timestamp": 1646810679233,
+        "author.name": "neon",
+        "message": "\u30d9\u30af\u7de8\u3057\u3063\u304b\u308aw",
+        "amountString": ""
+    },
+    "chat19": {
+        "elapsedTime": "1:24",
+        "timestamp": 1646810681818,
+        "author.name": "\u3086\u304d\u3061",
+        "message": "\u30d9\u30af\u30c8\u30eb\u77e5\u3089\u3093",
+        "amountString": ""
+    },
+    "chat20": {
+        "elapsedTime": "1:51",
+        "timestamp": 1646810709066,
+        "author.name": "maomao",
+        "message": "\u6d41\u308c\u5909\u308f\u3063\u305f\u306a",
+        "amountString": ""
+    },
+    "chat21": {
+        "elapsedTime": "1:58",
+        "timestamp": 1646810716037,
+        "author.name": "neon",
+        "message": "\u30a2\u30a4\u30c6\u30e0\u3042\u308a\u3080\u305a\u3044\u306a\u30fc",
+        "amountString": ""
+    },
+    "chat22": {
+        "elapsedTime": "1:59",
+        "timestamp": 1646810716844,
+        "author.name": "\u3086\u304d\u3061",
+        "message": "\u9811\u5f35\u308c\u30c9\u30f3\u30ad\u30fc",
+        "amountString": ""
+    },
+    "chat23": {
+        "elapsedTime": "2:06",
+        "timestamp": 1646810723899,
+        "author.name": "maomao",
+        "message": "\u52dd\u3063\u305f\u306a",
+        "amountString": ""
+    },
+    "chat24": {
+        "elapsedTime": "2:12",
+        "timestamp": 1646810730344,
+        "author.name": "\u3086\u304d\u3061",
+        "message": "\u30c6\u30ea\u30fc\u5acc\u3044\u306a\u3093\u3058\u3083",
+        "amountString": ""
+    }
+}
