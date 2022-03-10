@@ -28,8 +28,9 @@ def get_inst_higher(chat_data):
     for i, (key, value) in enumerate(chat_cnt_dict.items()):
         if i > AVE_TIME_RANGE:
             temp_chat_cnt += chat_cnt_dict[temp_key_list[-1]]
-            if chat_cnt_dict[key] > CHAT_INST_SPEED_MAG*(temp_chat_cnt/AVE_TIME_RANGE):
-                funny_point_list.append(get_funny_range(key))
+            if temp_chat_cnt != 0:
+                if chat_cnt_dict[key] > CHAT_INST_SPEED_MAG*(temp_chat_cnt/AVE_TIME_RANGE):
+                    funny_point_list.append(get_funny_range(key))
             temp_chat_cnt -= chat_cnt_dict[temp_key_list[0]]
             temp_key_list.pop(0)
             temp_key_list.append(key)
