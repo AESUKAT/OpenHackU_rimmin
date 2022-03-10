@@ -28,12 +28,12 @@ def count_section_super_chat(chat_data,interval_time = 10):
                 tmp = [0 for i in range(ceil((now_time - base_time + 1)/10))]
                 sectioned_superchat_cnt.extend(tmp)
                 base_time = len(sectioned_superchat_cnt)*10
-
-
+            
 
             now_i = floor(now_time/10)
             #print(now_time,now_i)
-            sectioned_superchat_cnt[now_i] += 1
+            if now_i >= 0:
+                sectioned_superchat_cnt[now_i] += 1
 
     sectioned_superchat_value = []
     for i in range(len(sectioned_superchat_cnt)-2):
