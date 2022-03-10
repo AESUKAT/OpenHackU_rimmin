@@ -12,7 +12,7 @@ import kukan
 import autoPleyer
 import superChat
 
-video_id = input()
+video_id = input('video idを入力してください→')
 #get_data.get_live_chat(video_id)
 chat_data = cmn_func.import_json_info(video_id)
 funny_point_list = instantaneous.get_inst_higher(chat_data)
@@ -31,6 +31,7 @@ super_chat_list = superChat.count_section_super_chat(super_chat_data)
 concatenate_list = [funny_point_list, ranking_list, super_chat_list]
 funny_clip = []
 funny_clip = cmn_func.time_to_funny_clip(concatenate_list)
+print('fun', funny_clip)
 
 target_url = "https://www.youtube.com/watch?v=" + video_id
 autoPleyer.call_selenium(target_url, funny_clip)
