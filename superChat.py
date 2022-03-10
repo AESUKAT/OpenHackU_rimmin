@@ -32,7 +32,7 @@ def count_section_super_chat(chat_data,interval_time = 10):
 
 
             now_i = floor(now_time/10)
-            print(now_time,now_i)
+            #print(now_time,now_i)
             sectioned_superchat_cnt[now_i] += 1
 
     sectioned_superchat_value = []
@@ -54,8 +54,8 @@ def count_section_super_chat(chat_data,interval_time = 10):
         
         max_index -= 6
         max_values.append([max_index*10,max_index*10+30])
-    print(numpy.array(max_values))
-    return numpy.array(sectioned_superchat_value)
+    #print(numpy.array(max_values))
+    return max_values   
 
 if __name__ == "__main__":
     VIDEO_ID = "EY62MO3bOPE"
