@@ -68,6 +68,8 @@ def search_time(time_info_list):
     for time_info in time_info_list:
         for time in time_info:
             comb_time_info.append(time)
+
+    comb_time_info.sort(key=lambda x:x[0])
     
     is_next = True
     comb_funny_time = []
@@ -108,6 +110,7 @@ def main():
     chat_data = import_json_info(video_id)
 
     funny_point_list = [instantaneous.get_inst_higher(chat_data)]
+
     funny_clip = time_to_funny_clip(funny_point_list)
     print(funny_clip)
 
