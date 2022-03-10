@@ -1,16 +1,16 @@
-import pytchat
 import time
 import json
-import numpy
 import cmn_func
 from math import ceil,floor
+
+'''
 def load_json(video_id,file_cnt):
     file_path = f'chat_data/{video_id}/chat_file_{file_cnt:0>4}.json'
 
     with open(file_path, 'r') as f:
         chat_data = json.load(f)
     return chat_data
-
+'''
 def count_section_super_chat(chat_data,interval_time = 10):
 
     sectioned_superchat_cnt = []
