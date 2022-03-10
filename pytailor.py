@@ -32,5 +32,5 @@ concatenate_list = [funny_point_list, ranking_list, super_chat_list]
 funny_clip = []
 funny_clip = cmn_func.time_to_funny_clip(concatenate_list)
 
-target_url = "https://www.youtube.com/watch?v=" + "JPFFHu1X3gY"
+target_url = "https://www.youtube.com/watch?v=" + video_id
 autoPleyer.call_selenium(target_url, funny_clip)
