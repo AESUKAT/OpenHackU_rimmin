@@ -17,6 +17,7 @@ def call_selenium(target_url, best_moments):
         driver.get(target_section_start)
         print(best_moments[i][1] - best_moments[i][0])
         time.sleep(best_moments[i][1] - best_moments[i][0])
+        print(best_moments[i][1] - best_moments[i][0])
 
     driver.quit()
 
