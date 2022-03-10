@@ -1,8 +1,9 @@
 import time
 from selenium import webdriver
-
+import os.path
 def call_selenium(target_url, best_moments):
-    profilefolder = '--user-data-dir=' + r"C:\Users\admin\AppData\Local\Google\Chrome\User Data"
+    user_name = os.path.expanduser('~').split("\\")[-1]
+    profilefolder = '--user-data-dir=' + rf"C:\Users\{user_name}\AppData\Local\Google\Chrome\User Data"
     options = webdriver.ChromeOptions()
     options.add_argument(profilefolder)
 
