@@ -61,7 +61,7 @@ def calculation_of_sections_function(jsn, total_time, section_time):
     ranking = sorted(macth_counts.items(), key=lambda x:x[1])
     # ranking_list -> 面白いと予想した区間
     ranking_list = [[ranking[-1][0], ranking[-1][0] + section_time],[ranking[-2][0], ranking[-2][0] + section_time],[ranking[-3][0], ranking[-3][0] + section_time]]
-    print(ranking_list)
+    #print(ranking_list)
     return ranking_list
 
 def main():
@@ -73,21 +73,3 @@ def main():
 
 if __name__=="__main__":
     main()
-
-#バックアップ用
-'''
-while flag:
-    for k in jsn.keys():
-        flag = False
-        timestamp = jsn[k]["timestamp"] // 1000
-        coment = jsn[k]["message"]
-        coments.append(coment)
-        print(timestamp - section_start, section_time)
-        if timestamp - section_start >= section_time:
-            all_coments.append(coments)
-            jsn = {k: v for k, v in jsn.items() if v["timestamp"] // 1000 > section_start}
-            coments = []
-            section_start += diff
-            flag = True
-            break
-'''
