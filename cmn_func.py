@@ -8,7 +8,7 @@ LAST_CHAT_TIME = 0
 BEFORE_TIME = 5
 AFTER_TIME = 5
 
-FUNNY_SCORE_BORDER = 1
+FUNNY_SCORE_BORDER = 2
 
 
 def import_json_info(video_id):
