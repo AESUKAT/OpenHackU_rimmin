@@ -2,7 +2,7 @@ import cmn_func
 
 TIME_RANGE = 2
 AVE_TIME_RANGE = 5
-CHAT_INST_SPEED_MAG = 2
+CHAT_INST_SPEED_MAG = 5
 
 CLIP_TIME = 20
 TIME_RATIO = 1/4
@@ -28,17 +28,17 @@ def set_time():
 def get_inst_higher(chat_data):
     set_time()
 
-    temp_time = cmn_func.time_to_seconds(chat_data[list(chat_data.keys())[0]]['elapsedTime'])
+    key_time = cmn_func.time_to_seconds(chat_data[list(chat_data.keys())[0]]['elapsedTime'])
     chat_cnt_dict = dict()
-    chat_cnt_dict[temp_time] = 1
+    chat_cnt_dict[key_time] = 1
 
     for value in chat_data.values():
         now = cmn_func.time_to_seconds(value['elapsedTime'])
-        if (now - temp_time) >= TIME_RANGE:
-            temp_time = now
-            chat_cnt_dict[temp_time] = 1
+        while now >= (key_time + TIME_RANGE):
+            key_time += TIME_RANGE
+            chat_cnt_dict[key_time] = 0
         else:
-            chat_cnt_dict[temp_time] += 1
+            chat_cnt_dict[key_time] += 1
 
     temp_key_list = []
     funny_point_list = []
@@ -68,7 +68,7 @@ def get_inst_higher(chat_data):
 
 if __name__ == '__main__':
     # video_id = input('plz input video_id:')
-    video_id = 'SeWzXV0fYOM'
+    video_id = 'YgMffyeAvZI'
 
     chat_data = cmn_func.import_json_info(video_id)
 
