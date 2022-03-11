@@ -28,18 +28,20 @@ YouTube liveのアーカイブを、4つの評価基準で面白い区間を推�
 - python
 
 ## ライブラリ
-- math
-- os
-- time
-- json
+- 標準ライブラリ
+    - math
+    - os
+    - time
+    - json
 
-- numpy
-- librosa
-- sqlalchemy
-- selenium
-- soundfile
-- moviepy.editor
-- pytube
+- 外部ライブラリ
+    - numpy
+    - librosa
+    - sqlalchemy
+    - selenium
+    - soundfile
+    - moviepy.editor
+    - pytube
 
 # 使い方
 ## ファイル一式のダウンロード
@@ -50,8 +52,8 @@ $ pip install numpy
 $ pip install librosa
 $ pip install sqlalchemy
 $ pip install selenium
-$ pip install soundfile
-$ pip install moviepy.editor
+$ pip install PySoundFile
+$ pip install moviepy
 $ pip install pytube
 ```
 
