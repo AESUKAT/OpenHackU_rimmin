@@ -153,5 +153,5 @@ def del_file(mp4_file_path, wav_file_path):
         os.remove(wav_file_path)
     print('証拠は残さない')
 
-
-#chapter_list = dB_determination('https://www.youtube.com/watch?v=EYYizyYe5GY')
+if __name__ == "__main__":
+    chapter_list = dB_determination('https://www.youtube.com/watch?v=EYYizyYe5GY')
