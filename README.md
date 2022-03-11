@@ -52,8 +52,8 @@ $ pip install numpy
 $ pip install librosa
 $ pip install sqlalchemy
 $ pip install selenium
-$ pip install soundfile
-$ pip install moviepy.editor
+$ pip install PySoundFile
+$ pip install moviepy
 $ pip install pytube
 ```
 
