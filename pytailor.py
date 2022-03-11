@@ -30,14 +30,17 @@ try:
     super_chat_data = superChat.load_json(video_id, FILE_CNT)
     super_chat_list = superChat.count_section_super_chat(super_chat_data)
 except:
+    print('スーパーチャットはありませんでした。')
     super_chat_list = list()
 
 target_url = "https://www.youtube.com/watch?v=" + video_id
 dB_chapter_list = dB_determination.dB_determination(target_url)
 
 concatenate_list = [funny_point_list, ranking_list, super_chat_list, dB_chapter_list]
-for l in concatenate_list:
-    print('check' + str(l))
+print('check_funny_point_list:' + str(funny_point_list))
+print('check:ranking_list    :' + str(ranking_list))
+print('check_super_chat_list :' + str(super_chat_list))
+print('check_dB_chapter_list :' + str(dB_chapter_list))
 funny_clip = []
 funny_clip = cmn_func.time_to_funny_clip(concatenate_list)
 print('fun', funny_clip)

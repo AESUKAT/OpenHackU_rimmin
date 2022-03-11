@@ -79,9 +79,6 @@ def voloume_dB_mean_per_seconds(wav_file_path):
             volume_dB_mean_overstn = np.append(volume_dB_mean_overstn, volume_dB_mean[i])
             new_times = np.append(new_times, volume_dB_mean[i+1])
 
-    for i in range(len(volume_dB_mean_overstn)):
-        print('vol:' + str(volume_dB_mean_overstn[i]) + ' time:' + str(new_times[i]))
-
     del sound, fs, rms, volume_dB, volume_dB_mean, seconds
     
     print('音圧毎秒平均完了')
