@@ -13,7 +13,8 @@ import autoPleyer
 import superChat
 import dB_determination
 
-video_id = input('video idを入力してください→')
+video_id = input('urlまたはvideo idを入力してください→')
+video_id = cmn_func.video_id_to_url(video_id)
 get_data.get_live_chat(video_id)
 chat_data = cmn_func.import_json_info(video_id)
 funny_point_list = instantaneous.get_inst_higher(chat_data)

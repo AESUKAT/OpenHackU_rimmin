@@ -1,6 +1,6 @@
 import json
 import numpy as np
-
+import re
 
 START_TIME = 0
 LAST_CHAT_TIME = 0
@@ -10,6 +10,14 @@ AFTER_TIME = 5
 
 FUNNY_SCORE_BORDER = 2
 
+def video_id_to_url(video_id):
+    video_id += "&"
+    pattern = re.compile("v=(.*?)&")
+    regex = pattern.search(video_id)
+    if regex:
+        return regex.groups()[0]
+    else:
+        return video_id[:-1]
 
 def import_json_info(video_id):
     global LAST_CHAT_TIME
