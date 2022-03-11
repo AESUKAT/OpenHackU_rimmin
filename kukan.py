@@ -43,11 +43,13 @@ def calculation_of_sections_function(jsn, total_time, section_time):
         findtime = start_time + i
         jsn_match = {k: v for k, v in jsn.items() if v["timestamp"] // 1000 == findtime}
         for k in jsn_match.keys():
-            coment = jsn[k]["message"]
+            #coment = jsn[k]["message"]
+            removed_jsn = jsn[k]
+            coment = removed_jsn["message"]
             coments.append(coment)
         all_coments.append(coments)
         coments = []
-        jsn = {k: v for k, v in jsn.items() if v["timestamp"] // 1000 != findtime}
+        #jsn = {k: v for k, v in jsn.items() if v["timestamp"] // 1000 != findtime}
 
     #区間ごとの"w"や"草"の数を求めるための処理
     for i in range(len(all_coments)):
