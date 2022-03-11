@@ -1,10 +1,5 @@
 import json
-from math import comb
-from tracemalloc import start
 import numpy as np
-import copy
-
-from sympy import is_nthpow_residue
 
 
 START_TIME = 0
@@ -13,7 +8,7 @@ LAST_CHAT_TIME = 0
 BEFORE_TIME = 5
 AFTER_TIME = 5
 
-FUNNY_SCORE_BORDER = 2
+FUNNY_SCORE_BORDER = 1
 
 
 def import_json_info(video_id):
