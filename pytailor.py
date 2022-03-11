@@ -26,12 +26,9 @@ ranking_list = []
 ranking_list = kukan.calculation_of_sections_function(jsn, total_time, section_time)
 
 FILE_CNT = 0
-try:
-    super_chat_data = superChat.load_json(video_id, FILE_CNT)
-    super_chat_list = superChat.count_section_super_chat(super_chat_data)
-except:
-    print('スーパーチャットはありませんでした。')
-    super_chat_list = list()
+
+super_chat_data = superChat.load_json(video_id, FILE_CNT)
+super_chat_list = superChat.count_section_super_chat(super_chat_data)
 
 target_url = "https://www.youtube.com/watch?v=" + video_id
 dB_chapter_list = dB_determination.dB_determination(target_url)
