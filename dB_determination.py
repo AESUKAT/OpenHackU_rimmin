@@ -1,3 +1,4 @@
+import os
 import librosa
 import numpy as np
 import soundfile as sf
@@ -18,6 +19,8 @@ def dB_determination(YouTube_URL):
     start_time_list, end_time_list = start_end_timing(new_times, time_index)
 
     chapter_list = create_chapter_list(start_time_list, end_time_list)
+
+    #del_file(mp4_file_path, wav_file_path)
 
     print('全完')
     return chapter_list
@@ -72,7 +75,7 @@ def voloume_dB_mean_per_seconds(wav_file_path):
     new_times = np.array([])
 
     for i in range(0,len(volume_dB_mean),2):
-        if volume_dB_mean[i] > -30:
+        if volume_dB_mean[i] > -50:
             volume_dB_mean_overstn = np.append(volume_dB_mean_overstn, volume_dB_mean[i])
             new_times = np.append(new_times, volume_dB_mean[i+1])
 
@@ -87,7 +90,7 @@ def volume_dB_value_cal(volume_dB_mean_overstn):
     volume_dB_std = np.std(volume_dB_mean_overstn)
     volume_dB_value = 50 + ((volume_dB_mean_overstn - volume_dB_mean_mean) / volume_dB_std) * 10
 
-    deviation = 70
+    deviation = 65
     time_index = np.where(volume_dB_value >= deviation)
 
     del volume_dB_mean_mean, volume_dB_std, volume_dB_value, deviation
@@ -97,7 +100,7 @@ def volume_dB_value_cal(volume_dB_mean_overstn):
 
 # 再生時間と再生終了時間を調べる
 def start_end_timing(new_times, time_index):
-    time_wid = 2
+    time_wid = 3
 
     for i in range(len(time_index)):
         np_start_time = new_times[time_index[i]] - time_wid
@@ -107,7 +110,7 @@ def start_end_timing(new_times, time_index):
 
     del new_times, time_index
 
-    print('再生する時間の探索完了')
+    print('再生する時間の探索完了' + str(start_time_list) + str(end_time_list))
     return start_time_list, end_time_list
 
 # 再生するチャプターリストを作成
@@ -135,12 +138,20 @@ def create_chapter_list(start_time_list, end_time_list):
         if end_flag:
             start_flag = False
             end_flag = False
-            if (end_time - start_time > 5):
-                chapter_list.append([start_time, end_time])
+            #if (end_time - start_time >= 5):
+            chapter_list.append([start_time, end_time])
     
     del start_time_list, end_time_list, start_flag, end_flag, len_start_end_time_list
     
     print('チャプターリスト作成完了')
     return chapter_list
 
-chapter_list = dB_determination('https://www.youtube.com/watch?v=EYYizyYe5GY')
+def del_file(mp4_file_path, wav_file_path):
+    if os.path.exists(mp4_file_path):
+        os.remove(mp4_file_path)
+    if os.path.exists(wav_file_path):
+        os.remove(wav_file_path)
+    print('証拠は残さない')
+
+if __name__ == "__main__":
+    chapter_list = dB_determination('https://www.youtube.com/watch?v=PJoTdBQodOE')

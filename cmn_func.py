@@ -1,10 +1,5 @@
 import json
-from math import comb
-from tracemalloc import start
 import numpy as np
-import copy
-
-from sympy import is_nthpow_residue
 
 
 START_TIME = 0
@@ -98,7 +93,8 @@ def number_line_to_funny_clip(number_line, comb_funny_time):
     for time in comb_funny_time:
         max_score = max(number_line[time[0]:time[1]+1])
         if max_score >= FUNNY_SCORE_BORDER:
-            max_index = number_line.index(max_score)
+            max_index = np.argmax(number_line[time[0]:time[1]+1] >= max_score)
+            max_index += time[0]
             start_time = max_index - BEFORE_TIME
             finish_time = max_index + AFTER_TIME
             if start_time < START_TIME:

@@ -1,21 +1,18 @@
-import time
 import json
 import cmn_func
 from math import ceil,floor
 
-'''
 def load_json(video_id,file_cnt):
     file_path = f'chat_data/{video_id}/chat_file_{file_cnt:0>4}.json'
 
     with open(file_path, 'r') as f:
         chat_data = json.load(f)
     return chat_data
-'''
+
 def count_section_super_chat(chat_data,interval_time = 10):
 
     sectioned_superchat_cnt = []
-    sectioned_superchat_cnt.append(0)
-    base_time = 10
+    base_time = 0
 
     for key in chat_data.keys():
 
@@ -42,18 +39,20 @@ def count_section_super_chat(chat_data,interval_time = 10):
     
     max_values = []
     for i in range(3):
-        max_value = max(sectioned_superchat_value)
-        max_index = sectioned_superchat_value.index(max_value)
+        if  i < len(sectioned_superchat_cnt):
+            print(sectioned_superchat_cnt, i)
+            max_value = max(sectioned_superchat_value)
+            max_index = sectioned_superchat_value.index(max_value)
         
-        sectioned_superchat_value[max_index] = 0
-        for j in range(1,3):
-            if max_index+j < len(sectioned_superchat_value):
-                sectioned_superchat_value[max_index+j] = 0
-            if max_index-j > 0:
-                sectioned_superchat_value[max_index-j] = 0
-        
-        max_index -= 6
-        max_values.append([max_index*10,max_index*10+30])
+            sectioned_superchat_value[max_index] = 0
+            for j in range(1,3):
+                if max_index+j < len(sectioned_superchat_value):
+                    sectioned_superchat_value[max_index+j] = 0
+                if max_index-j > 0:
+                    sectioned_superchat_value[max_index-j] = 0
+            
+            max_index -= 6
+            max_values.append([max_index*10,max_index*10+30])
     #print(numpy.array(max_values))
     return max_values   
 
